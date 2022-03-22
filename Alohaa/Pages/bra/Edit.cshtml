@@ -1,0 +1,50 @@
+﻿@page
+@model Alohaa.Pages.bra.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>pogi</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="pogi.ID" />
+            <div class="form-group">
+                <label asp-for="pogi.Tittle" class="control-label"></label>
+                <input asp-for="pogi.Tittle" class="form-control" />
+                <span asp-validation-for="pogi.Tittle" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="pogi.Date" class="control-label"></label>
+                <input asp-for="pogi.Date" class="form-control" />
+                <span asp-validation-for="pogi.Date" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="pogi.Genre" class="control-label"></label>
+                <input asp-for="pogi.Genre" class="form-control" />
+                <span asp-validation-for="pogi.Genre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="pogi.Price" class="control-label"></label>
+                <input asp-for="pogi.Price" class="form-control" />
+                <span asp-validation-for="pogi.Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
